@@ -1,6 +1,7 @@
-ddocument.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     // !!! 중요: README.md 파일을 읽고, 배포된 자신의 Google Apps Script 웹 앱 URL로 변경하세요.
     const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbxXC4wN294u25GQaxLpJiyLlXtGdE7l7UAtSp7E53ktyl7WQfgM3r_fs14BI9cKT5M/exec';
+
     const recordForm = document.getElementById('record-form');
     const recordsContainer = document.getElementById('records-container');
     const dateInput = document.getElementById('date');
@@ -46,11 +47,7 @@ ddocument.addEventListener('DOMContentLoaded', () => {
         row.classList.add('record-row');
 
         const moodEmojis = { '행복': '😄', '보통': '😐', '우울': '😔', '분노': '😡' };
-      const typeText = {
-  'korean': '🍚 한식',
-  'french': '🍞 양식',
-  'chinese': '🥟 중식',
-  'japanese': '🍣 일식'};
+        const typeText = { 'deed': '😊 선행했어요', 'help': '💖 도움받았어요' };
 
         row.innerHTML = `
             <div class="record-type ${record.Type}">${typeText[record.Type] || record.Type}</div>
